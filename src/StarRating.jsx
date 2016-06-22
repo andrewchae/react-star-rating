@@ -160,7 +160,7 @@ class StarRating extends React.Component {
     for (var i = 0; i < this.props.totalStars; i++) {
       var attrs = {};
       attrs['transform'] = `translate(${i*50}, 0)`;
-      attrs['fill'] = (i+this.props.step <= rating) ? '#FFA91B' : '#C6C6C6';
+      attrs['fill'] = (i+this.props.step <= rating) ? (this.props.highlightedStarColor || '#FFA91B') : (this.props.starColor || '#C6C6C6');
       stars.push(
         <path {...attrs}
           key={`star-${i}`}
